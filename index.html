@@ -35,7 +35,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=Public+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,700..900&family=Public+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Mono:wght@400;500&display=swap"
     />
 
     <style>
@@ -47,7 +47,7 @@
         --paper-2: #f2f2ec;
         --ink: #141410;
         --ink-2: #57574f;
-        --ink-3: #78786f;
+        --ink-3: #6d6d64;
         --accent: #ff4a17;
         --accent-ink: #ffffff;
         --line: #dcdcd2;
@@ -85,6 +85,9 @@
       * {
         box-sizing: border-box;
       }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         margin: 0;
         background: var(--paper);
@@ -94,8 +97,8 @@
           system-ui,
           -apple-system,
           sans-serif;
-        font-size: 16px;
-        line-height: 1.55;
+        font-size: 17px;
+        line-height: 1.6;
         -webkit-font-smoothing: antialiased;
       }
       h1,
@@ -125,6 +128,24 @@
         outline: 2px solid var(--accent);
         outline-offset: 3px;
       }
+      .skip {
+        position: absolute;
+        left: 12px;
+        top: -60px;
+        z-index: 90;
+        padding: 12px 18px;
+        background: var(--accent);
+        color: var(--accent-ink);
+        text-decoration: none;
+        font-family: "Roboto Mono", ui-monospace, monospace;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: top 0.18s ease;
+      }
+      .skip:focus {
+        top: 12px;
+      }
       ::selection {
         background: var(--accent);
         color: var(--accent-ink);
@@ -136,7 +157,7 @@
       }
       .label {
         font-family: "Roboto Mono", ui-monospace, monospace;
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.16em;
         text-transform: uppercase;
         color: var(--ink-3);
@@ -221,7 +242,7 @@
       .brand-name {
         font-family: "Archivo", sans-serif;
         font-weight: 900;
-        font-size: 14px;
+        font-size: 15px;
         text-transform: uppercase;
         letter-spacing: -0.01em;
         line-height: 1.15;
@@ -253,7 +274,7 @@
         white-space: nowrap;
         padding: 9px 0;
         font-family: "Roboto Mono", monospace;
-        font-size: 12px;
+        font-size: 13px;
         letter-spacing: 0.06em;
         text-transform: uppercase;
         color: var(--ink-3);
@@ -271,7 +292,7 @@
         color: var(--ink);
       }
       .rail-link .n {
-        font-size: 10px;
+        font-size: 11px;
         color: var(--ink-3);
         opacity: 0.7;
       }
@@ -297,18 +318,13 @@
       }
       .rail-foot a {
         font-family: "Roboto Mono", monospace;
-        font-size: 12px;
+        font-size: 13px;
         text-decoration: none;
         color: var(--ink-2);
         display: inline-flex;
         align-items: center;
         gap: 7px;
         transition: color 0.16s;
-      }
-      .rail-foot a::before {
-        content: "↗";
-        color: var(--accent);
-        font-size: 11px;
       }
       .rail-foot a:hover {
         color: var(--accent);
@@ -378,7 +394,7 @@
       }
       .status span {
         font-family: "Roboto Mono", monospace;
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
       }
@@ -440,7 +456,7 @@
         }
       }
       .hero-lead {
-        font-size: clamp(1.05rem, 1.9vw, 1.35rem);
+        font-size: clamp(1.2rem, 2.1vw, 1.55rem);
         line-height: 1.45;
         color: var(--ink);
         max-width: 34ch;
@@ -457,7 +473,7 @@
       }
       .hero-side p {
         color: var(--ink-2);
-        font-size: 14.5px;
+        font-size: 16px;
         max-width: 44ch;
       }
       .actions {
@@ -477,7 +493,7 @@
         border-color: var(--accent);
         color: var(--accent-ink);
         font-family: "Roboto Mono", monospace;
-        font-size: 12.5px;
+        font-size: 13.5px;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         transition:
@@ -521,7 +537,7 @@
       .ticker-track span {
         font-family: "Archivo", sans-serif;
         font-weight: 900;
-        font-size: 14px;
+        font-size: 15px;
         text-transform: uppercase;
         letter-spacing: 0.02em;
         font-variation-settings: "wdth" 105;
@@ -567,7 +583,7 @@
       .metric span {
         display: block;
         margin-top: 10px;
-        font-size: 13.5px;
+        font-size: 14.5px;
         color: var(--ink-2);
         max-width: 24ch;
       }
@@ -590,7 +606,7 @@
         margin: 9px 0 0;
         font-family: "Archivo", sans-serif;
         font-weight: 900;
-        font-size: 17px;
+        font-size: 18px;
         text-transform: uppercase;
         letter-spacing: -0.02em;
         line-height: 1.12;
@@ -600,7 +616,7 @@
         margin-top: 6px;
         font-family: "Public Sans", sans-serif;
         font-weight: 400;
-        font-size: 13px;
+        font-size: 14.5px;
         letter-spacing: 0;
         text-transform: none;
         color: var(--ink-2);
@@ -647,13 +663,13 @@
       .sec-note {
         margin-top: 14px;
         color: var(--ink-2);
-        font-size: 15px;
+        font-size: 16.5px;
         max-width: 56ch;
         text-transform: none;
       }
 
       .prose {
-        font-size: clamp(1.05rem, 2vw, 1.3rem);
+        font-size: clamp(1.2rem, 2.2vw, 1.5rem);
         line-height: 1.5;
         color: var(--ink);
         max-width: 40ch;
@@ -670,7 +686,7 @@
       }
       .prose-side {
         color: var(--ink-2);
-        font-size: 14.5px;
+        font-size: 16px;
         max-width: 46ch;
       }
       .prose-side strong {
@@ -702,7 +718,7 @@
       .job-when b {
         font-family: "Archivo", sans-serif;
         font-weight: 900;
-        font-size: 15px;
+        font-size: 16px;
         text-transform: uppercase;
         letter-spacing: -0.01em;
         color: var(--accent);
@@ -717,19 +733,19 @@
       .job-org {
         margin-top: 9px;
         color: var(--ink-2);
-        font-size: 14px;
+        font-size: 15.5px;
       }
       .bullets {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 11px;
         margin-top: 20px;
       }
       .bullets li {
         position: relative;
         padding-left: 24px;
         color: var(--ink-2);
-        font-size: 15px;
+        font-size: 16.5px;
       }
       .bullets li::before {
         content: "";
@@ -748,7 +764,7 @@
       }
       .chip {
         font-family: "Roboto Mono", monospace;
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.04em;
         text-transform: uppercase;
         padding: 5px 9px;
@@ -817,7 +833,7 @@
       }
       .proj-when {
         font-family: "Roboto Mono", monospace;
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: var(--ink-3);
@@ -833,7 +849,7 @@
       .proj-kicker {
         margin-top: 10px;
         font-family: "Roboto Mono", monospace;
-        font-size: 12px;
+        font-size: 13.5px;
         letter-spacing: 0.04em;
         color: var(--accent);
       }
@@ -843,7 +859,7 @@
       .proj-url {
         margin-top: 8px;
         font-family: "Roboto Mono", ui-monospace, monospace;
-        font-size: 11.5px;
+        font-size: 12.5px;
         letter-spacing: 0.02em;
         color: var(--ink-3);
         word-break: break-all;
@@ -853,7 +869,7 @@
       }
       .proj-desc {
         color: var(--ink-2);
-        font-size: 15px;
+        font-size: 16.5px;
       }
       .arrow {
         font-family: "Archivo", sans-serif;
@@ -888,7 +904,7 @@
         padding: 20px 0 6px;
         border-bottom: 0;
         font-family: "Roboto Mono", monospace;
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.16em;
         text-transform: uppercase;
         color: var(--ink-3);
@@ -914,7 +930,7 @@
       .cell {
         font-family: "Archivo", sans-serif;
         font-weight: 700;
-        font-size: 12.5px;
+        font-size: 13.5px;
         text-transform: uppercase;
         letter-spacing: 0.01em;
         padding: 8px 12px;
@@ -947,7 +963,7 @@
         border-top: 1px solid var(--line);
       }
       .entry h4 {
-        font-size: 1.05rem;
+        font-size: 1.15rem;
         font-variation-settings:
           "wdth" 102,
           "wght" 800;
@@ -956,7 +972,7 @@
       .entry p {
         margin-top: 7px;
         color: var(--ink-2);
-        font-size: 14px;
+        font-size: 15.5px;
       }
       .entry .meta {
         margin-top: 5px;
@@ -1020,8 +1036,61 @@
         border-top: 1.5px solid
           color-mix(in srgb, var(--accent-ink) 45%, transparent);
         font-family: "Roboto Mono", monospace;
-        font-size: 12px;
+        font-size: 13.5px;
         letter-spacing: 0.04em;
+      }
+      .copy {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin-left: 14px;
+        vertical-align: middle;
+        padding: 9px 14px;
+        cursor: pointer;
+        background: transparent;
+        color: var(--accent-ink);
+        border: 1.5px solid color-mix(in srgb, var(--accent-ink) 55%, transparent);
+        font-family: "Roboto Mono", ui-monospace, monospace;
+        font-size: 12.5px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition:
+          background-color 0.18s ease,
+          color 0.18s ease,
+          border-color 0.18s ease;
+      }
+      .copy:hover {
+        background: var(--accent-ink);
+        color: var(--accent);
+        border-color: var(--accent-ink);
+      }
+      .copy[data-state="done"] {
+        background: var(--accent-ink);
+        color: var(--accent);
+        border-color: var(--accent-ink);
+      }
+      .ic {
+        width: 16px;
+        height: 16px;
+        flex: none;
+        display: inline-block;
+        vertical-align: -3px;
+      }
+      .ic-sm {
+        width: 13px;
+        height: 13px;
+        vertical-align: -2px;
+      }
+      .contact-meta span,
+      .contact-meta a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .rail-loc {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
       }
       .contact-meta a {
         text-decoration: none;
@@ -1031,7 +1100,98 @@
         border-color: var(--accent-ink);
       }
 
+      @media print {
+        :root {
+          --paper: #ffffff;
+          --ink: #000000;
+          --ink-2: #333333;
+          --ink-3: #555555;
+          --accent: #000000;
+          --accent-ink: #ffffff;
+          --line: #bbbbbb;
+          --rule: #000000;
+        }
+        body {
+          font-size: 11pt;
+          line-height: 1.4;
+        }
+        .gridlines,
+        .ticker,
+        .skip,
+        .arrow,
+        .status .beam,
+        .copy,
+        .rail-nav {
+          display: none !important;
+        }
+        .wrap {
+          display: block;
+          max-width: none;
+          padding: 0;
+        }
+        .rail {
+          position: static;
+          height: auto;
+          padding: 0 0 12pt;
+          border-bottom: 1pt solid var(--rule);
+        }
+        .rail-foot {
+          flex-direction: row;
+          gap: 14pt;
+        }
+        .namebox h1 {
+          line-height: 0.9;
+        }
+        .fit-line {
+          font-size: 34pt !important;
+        }
+        .namebox .line-2 {
+          color: #000 !important;
+          -webkit-text-stroke: 0;
+        }
+        .sec {
+          padding-top: 18pt;
+        }
+        .contact {
+          margin-top: 18pt;
+          padding: 14pt 0 0;
+          background: transparent !important;
+          color: #000 !important;
+          border-top: 2pt solid #000;
+        }
+        .contact .label,
+        .contact-meta {
+          color: #000 !important;
+        }
+        .mailto {
+          border-bottom-width: 1pt;
+        }
+        .job,
+        .proj,
+        .entry,
+        .sec {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+        .proj::before {
+          display: none;
+        }
+        a[href^="http"]::after {
+          content: " (" attr(href) ")";
+          font-size: 8pt;
+          color: #555;
+          word-break: break-all;
+        }
+        .rail-foot a::before,
+        .proj-url::after {
+          content: "";
+        }
+      }
+
       @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
         *,
         *::before,
         *::after {
@@ -1046,6 +1206,27 @@
     </style>
   </head>
   <body>
+    <a class="skip" href="#intro">Skip to content</a>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 .5C5.73.5.99 5.24.99 11.5c0 4.86 3.15 8.98 7.52 10.44.55.1.75-.24.75-.53 0-.26-.01-1.13-.02-2.05-3.06.67-3.71-1.3-3.71-1.3-.5-1.27-1.22-1.61-1.22-1.61-1-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.69-1.48-2.44-.28-5.01-1.22-5.01-5.44 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.4.11-2.92 0 0 .92-.29 3.02 1.13a10.4 10.4 0 0 1 5.52 0c2.1-1.42 3.02-1.13 3.02-1.13.6 1.52.22 2.64.11 2.92.7.77 1.13 1.75 1.13 2.95 0 4.23-2.58 5.16-5.03 5.43.39.34.74 1.01.74 2.04 0 1.47-.01 2.66-.01 3.02 0 .29.2.64.76.53 4.36-1.46 7.51-5.58 7.51-10.44C23.01 5.24 18.27.5 12 .5z"/>
+      </symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.64h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.6c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.2 1.46-2.2 2.97V21h-4V9z"/>
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2.5" y="4.5" width="19" height="15" rx="1.5"/><path d="m3 6 9 6.5L21 6"/>
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v11m0 0 4.2-4.2M12 14l-4.2-4.2M4 20h16"/>
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.6 10.9a15.3 15.3 0 0 0 6.5 6.5l2.2-2.2a1.1 1.1 0 0 1 1.1-.26c1.15.38 2.4.59 3.6.59.6 0 1.1.5 1.1 1.1V20c0 .6-.5 1.1-1.1 1.1C10.8 21.1 3 13.3 3 3.9 3 3.3 3.5 2.8 4.1 2.8h3.4c.6 0 1.1.5 1.1 1.1 0 1.25.2 2.45.59 3.6.11.36.02.77-.26 1.06L6.6 10.9z"/>
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21.2s6.8-5.7 6.8-11a6.8 6.8 0 1 0-13.6 0c0 5.3 6.8 11 6.8 11z"/><circle cx="12" cy="10.1" r="2.4"/>
+      </symbol>
+    </svg>
     <div class="gridlines" aria-hidden="true"></div>
 
     <div class="wrap">
@@ -1059,7 +1240,7 @@
             </div>
           </div>
           <nav class="rail-nav">
-            <a class="rail-link is-active" href="#intro"
+            <a class="rail-link is-active" aria-current="true" href="#intro"
               >Intro<span class="n mono">01</span></a
             >
             <a class="rail-link" href="#profile"
@@ -1077,6 +1258,9 @@
             <a class="rail-link" href="#background"
               >Background<span class="n mono">06</span></a
             >
+            <a class="rail-link" href="#contact"
+              >Contact<span class="n mono">07</span></a
+            >
           </nav>
         </div>
         <div class="rail-foot">
@@ -1084,13 +1268,15 @@
             href="https://linkedin.com/in/sumukh-marathe-170732263"
             target="_blank"
             rel="noopener"
-            >LinkedIn</a
+            ><svg class="ic" aria-hidden="true"><use href="#i-linkedin"></use></svg> LinkedIn</a
           >
           <a href="https://github.com/Sumukh2003" target="_blank" rel="noopener"
-            >GitHub</a
+            ><svg class="ic" aria-hidden="true"><use href="#i-github"></use></svg> GitHub</a
           >
-          <a href="mailto:sumukhmarathesonda@gmail.com">Email</a>
-          <p class="label">Bengaluru · IN</p>
+          <a href="mailto:sumukhmarathesonda@gmail.com"
+            ><svg class="ic" aria-hidden="true"><use href="#i-mail"></use></svg> Email</a
+          >
+          <p class="label rail-loc"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-pin"></use></svg> Bengaluru · IN</p>
         </div>
       </aside>
 
@@ -1127,14 +1313,20 @@
               </p>
               <div class="actions">
                 <a class="btn" href="mailto:sumukhmarathesonda@gmail.com"
-                  >Get in touch</a
+                  ><svg class="ic" aria-hidden="true"><use href="#i-mail"></use></svg> Get in touch</a
                 >
                 <a
                   class="btn btn-ghost"
                   href="https://github.com/Sumukh2003"
                   target="_blank"
                   rel="noopener"
-                  >GitHub</a
+                  ><svg class="ic" aria-hidden="true"><use href="#i-github"></use></svg> GitHub</a
+                >
+                <a
+                  class="btn btn-ghost"
+                  href="Sumukh_Marathe_Resume.pdf"
+                  download
+                  ><svg class="ic" aria-hidden="true"><use href="#i-download"></use></svg> Résumé</a
                 >
               </div>
             </div>
@@ -1613,18 +1805,25 @@
         <h2 style="margin-top: 16px">Got something<br />worth building?</h2>
         <a class="mailto" href="mailto:sumukhmarathesonda@gmail.com"
           >sumukhmarathesonda@gmail.com</a
+        ><button
+          class="copy"
+          type="button"
+          id="copyEmail"
+          data-email="sumukhmarathesonda@gmail.com"
         >
+          Copy
+        </button>
         <div class="contact-meta">
-          <span>+91 82177 39781</span>
-          <span>Bengaluru, India</span>
+          <span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-phone"></use></svg> +91 82177 39781</span>
+          <span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-pin"></use></svg> Bengaluru, India</span>
           <a
             href="https://linkedin.com/in/sumukh-marathe-170732263"
             target="_blank"
             rel="noopener"
-            >LinkedIn</a
+            ><svg class="ic ic-sm" aria-hidden="true"><use href="#i-linkedin"></use></svg> LinkedIn</a
           >
           <a href="https://github.com/Sumukh2003" target="_blank" rel="noopener"
-            >GitHub</a
+            ><svg class="ic ic-sm" aria-hidden="true"><use href="#i-github"></use></svg> GitHub</a
           >
           <span style="margin-left: auto">© 2026</span>
         </div>
@@ -1691,10 +1890,54 @@
           });
         }
 
+        // copy the address, with a confirmation state
+        var copyBtn = document.getElementById("copyEmail");
+        if (copyBtn) {
+          copyBtn.addEventListener("click", function () {
+            var addr = copyBtn.dataset.email;
+            var settle = function (label, state) {
+              copyBtn.textContent = label;
+              copyBtn.dataset.state = state;
+              setTimeout(function () {
+                copyBtn.textContent = "Copy";
+                copyBtn.dataset.state = "";
+              }, 1800);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(addr).then(
+                function () {
+                  settle("Copied", "done");
+                },
+                function () {
+                  settle("Press Ctrl+C", "");
+                },
+              );
+            } else {
+              settle("Press Ctrl+C", "");
+            }
+          });
+        }
+
         // rail scrollspy
         var links = Array.prototype.slice.call(
           document.querySelectorAll(".rail-link"),
         );
+        var railNav = document.querySelector(".rail-nav");
+        // on narrow screens the nav is a horizontal strip: keep the current item visible
+        function keepActiveInView(link) {
+          if (!link || !railNav) return;
+          if (railNav.scrollWidth <= railNav.clientWidth) return;
+          var l = link.offsetLeft,
+            r = l + link.offsetWidth;
+          var view = railNav.scrollLeft,
+            edge = view + railNav.clientWidth;
+          if (l < view || r > edge) {
+            railNav.scrollTo({
+              left: Math.max(0, l - 16),
+              behavior: reduce ? "auto" : "smooth",
+            });
+          }
+        }
         var sections = links.map(function (l) {
           return document.querySelector(l.getAttribute("href"));
         });
@@ -1705,8 +1948,15 @@
                 if (!en.isIntersecting) return;
                 var i = sections.indexOf(en.target);
                 links.forEach(function (l, j) {
-                  l.classList.toggle("is-active", i === j);
+                  var on = i === j;
+                  l.classList.toggle("is-active", on);
+                  if (on) {
+                    l.setAttribute("aria-current", "true");
+                  } else {
+                    l.removeAttribute("aria-current");
+                  }
                 });
+                keepActiveInView(links[i]);
               });
             },
             { rootMargin: "-20% 0px -70% 0px" },
